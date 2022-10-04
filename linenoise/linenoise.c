@@ -115,6 +115,7 @@
 #include <sys/types.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <strings.h>
 #include "linenoise.h"
 
 /*

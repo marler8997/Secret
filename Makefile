@@ -26,13 +26,13 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 TARGET=Secret
-CC?=gcc
+CC=zig cc -nostdlib -nostdinc -I/home/marler8997/git/ziglibc/inc/libc -I/home/marler8997/git/ziglibc/inc/posix -I/home/marler8997/git/ziglibc/inc/gnu -L/home/marler8997/git/ziglibc/zig-out/lib
 CFLAGS=-O3 -Wall
 
 CFILES=main.c input.c linenoise/linenoise.c rooms.c items.c inter.c
 
 default:
-	$(CC) $(CFLAGS) -o $(TARGET) $(CFILES)
+	$(CC) $(CFLAGS) -o $(TARGET) $(CFILES) -lstart -lcguana
 clean:
 	rm -f $(TARGET)
 run: default
